@@ -211,16 +211,13 @@ client.on('message', message => {
   if(message.content === (prefix + "info")){
     message.channel.send("hello! I'm cowbot-beeboop, the Worst Possible Bot™!");
     message.channel.send("i was made in a sleep deprived haze by Hibou, and named by the lovely Tugbee");
-    message.channel.send("most of my commands are a buggy mess! if you manage to crash me, please let my developer know at hibou@coolsite.net or here on Discord at Hibou#9130");
-    message.channel.send("and most importantly, thanks for using me!");
-    setTimeout(() => {message.channel.send("p.s. most, most importantly is that if you get kicked by the roulette command, i don't know how to re-add you. keep an invite handy!")}, 300000);
-  }
+	}
 
   if (message.content === (prefix + 'ping')) {
     message.channel.send('pong');
   }
 
-  if(message.content.startsWith(prefix + "startPoll")){ //TODO: implement vote switching, allowing candidate names to be the same
+  if(message.content.startsWith(prefix + "startPoll")){ //TODO: implement vote switching
     if(ongoingPoll == true){
       console.log("ongoing poll!");
       return;
@@ -539,7 +536,6 @@ client.on('message', message => {
       var emojiCode = temp[1];
 
       if(emojiCode.charAt(0) != '<' || emojiCode.charAt(emojiCode.length - 1) != '>'){
-        message.channel.send("sorry, this command only works with custom emoji right now");
         return;
       }
 
@@ -605,16 +601,6 @@ client.on('message', message => {
         message.channel.send("No bullets!");
       }
     }
-
-    if (message.content.toLowerCase().includes("poppo")){
-      
-	  var mom = Math.floor(Math.random() * 100) + 1;
-	  if(mom == 100){
-		  message.channel.send(`$(name) Gay.`);
-	  } else {
-		  message.channel.send("Poppo Gay.");
-	  }
-	}
 
     if(message.content === (prefix + 'cuck')) {
       message.channel.send("", {
